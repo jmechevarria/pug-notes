@@ -1,0 +1,19 @@
+doctype html
+html.loading(lang="en")
+  head
+    title Login
+    link(rel="stylesheet" href="login.css")
+    link(rel="stylesheet" href="../common.css")
+
+  body
+    div#login
+      input#username(placeholder="Username" name="username")
+      input#password(placeholder="Password" name="password")
+      button Login
+      span#loginError
+    br
+    span or 
+      a#register(href="/register") Register
+
+    script(src="login.js")
+    script(src="../common.js")
