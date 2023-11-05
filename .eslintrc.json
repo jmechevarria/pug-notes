@@ -1,0 +1,41 @@
+/* eslint-env node */
+{
+  "root": true,
+  // This is required, or else ESLint will throw errors as it tries to parse TypeScript code as if it were regular JavaScript.
+  "parser": "@typescript-eslint/parser",
+  // This allows you to use typescript-eslint's rules within your codebase.
+  "plugins": ["@typescript-eslint"],
+  "extends": [
+    // ESLint's inbuilt "recommended" config - it turns on a small, sensible set of rules which lint for well-known best-practices.
+    "eslint:recommended",
+    // our "recommended" config - it's similar to eslint:recommended, except it turns on TypeScript-specific rules from our plugin.
+    "plugin:@typescript-eslint/recommended",
+    // another recommended configuration we provide. This one contains recommended rules that additionally require type information.
+    "plugin:@typescript-eslint/recommended-type-checked"
+  ],
+  // is a generally good ESLint practice to indicate this file is the root-level one used by the project and ESLint should not search beyond this directory for config files.
+  "parserOptions": {
+    "project": "tsconfig.eslint.json",
+    "tsconfigRootDir": "."
+  },
+  "rules": {
+    "@typescript-eslint/no-unused-vars": "warn",
+    "semi": ["warn", "always"],
+    "quotes": ["warn", "double"],
+    "no-useless-catch": "error",
+    "no-promise-executor-return": "error",
+    "prefer-template": "warn",
+    "object-shorthand": "warn",
+    "prefer-destructuring": "warn",
+    "no-else-return": "warn",
+    "arrow-body-style": "warn",
+    "max-lines-per-function": ["warn", { "max": 150 }]
+  },
+
+  "env": {
+    "node": true,
+    // this allows the use of globals (e.g: console) in JS files, like those inside 'client' folder
+    "browser": true,
+    "amd": true
+  }
+}
