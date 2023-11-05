@@ -1,0 +1,8 @@
+node_modules
+
+dist
+o-dist
+
+.env
+
+db
