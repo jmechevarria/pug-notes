@@ -1,0 +1,42 @@
+doctype html
+html.anonymous.loading(lang="en")
+  head
+    title Index
+    link(rel="stylesheet" href="index/index.css")
+    link(rel="stylesheet" href="common.css")
+
+  body
+    div#profile
+      span
+      br
+      button#logout Logout
+
+    div#add-note
+      form
+        label Title 
+        input.title
+        label Body
+        input.body
+        input.favorite(value=false, type="checkbox")
+        button Add note
+
+    if data.user && data.user.notes && data.user.notes.length
+      h1 Notes
+        ul#notes
+          - for (const note of data.user.notes)
+            li.note(id=note.id)= note.title
+              button.edit Edit
+              input.title(value=note.title)
+              input.body(value=note.body)
+              input.favorite(value=!!note.favorite, type="checkbox")
+              button.save Save
+    else
+      span No notes here
+
+    if data.user
+      script.
+        localStorage.setItem(  
+          'user', JSON.stringify(!{JSON.stringify(data.user)})
+        );
+    script(src="index/index.js")
+    script(src="common.js")
