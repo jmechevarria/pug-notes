@@ -34,7 +34,7 @@ document.querySelector("#login button").addEventListener("click", (e) => {
         const error = await response.json();
         console.log(response, error, error.message);
         document.querySelector("#loginError").textContent = String(
-          response.status
+          response.status,
         ).startsWith("5")
           ? "Server error"
           : error.message || "Server error";

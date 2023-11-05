@@ -13,7 +13,7 @@ export function errorHandler(error: Error, req: Request, res: Response) {
   console.log(
     `Handling error for a ${req.xhr ? "n async" : "normal"} request to ${
       req.url
-    }`
+    }`,
   );
 
   const errorResult: ErrorResult = {
@@ -39,7 +39,7 @@ export function errorHandler(error: Error, req: Request, res: Response) {
   }
 
   console.log(
-    `sending ${JSON.stringify(errorResult)} with status code ${status}`
+    `sending ${JSON.stringify(errorResult)} with status code ${status}`,
   );
   res.status(status).send(errorResult);
   // res.send("the final error");

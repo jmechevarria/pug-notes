@@ -18,7 +18,7 @@ export class User {
 
   constructor(
     private username: string,
-    private password: string
+    private password: string,
   ) {
     this.id = v4();
   }
@@ -33,7 +33,7 @@ export class User {
 
     if (
       data.users.find(
-        (user) => user.id === this.id || user.username === this.username
+        (user) => user.id === this.id || user.username === this.username,
       )
     )
       throw new BadRequestError("Duplicate username");
@@ -47,7 +47,7 @@ export class User {
 
     await fsp.writeFile(
       path.join(process.cwd(), "db", "db.json"),
-      JSON.stringify(data)
+      JSON.stringify(data),
     );
 
     return { username: this.username };

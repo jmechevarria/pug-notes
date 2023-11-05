@@ -15,7 +15,7 @@ export class UserService {
       username: result.username,
       token: jwt.sign(
         { username: result.username },
-        process.env.JWT_SECRET as string
+        process.env.JWT_SECRET as string,
       ),
     };
   }

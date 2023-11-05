@@ -26,7 +26,7 @@ export class AuthService {
     const user = data.users?.find(
       (user) =>
         user.password === loginDto.password &&
-        user.username === loginDto.username
+        user.username === loginDto.username,
     );
 
     if (!user) throw new NotAuthenticatedError("Unauthorized");
@@ -35,7 +35,7 @@ export class AuthService {
       username: user.username,
       token: jwt.sign(
         { username: user.username },
-        process.env.JWT_SECRET as string
+        process.env.JWT_SECRET as string,
       ),
     };
   }
