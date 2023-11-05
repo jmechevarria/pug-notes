@@ -52,42 +52,4 @@ export class User {
 
     return { username: this.username };
   }
-
-  // async addNote(noteDto: NoteDTO) {
-  //   const stringData = (
-  //     await fsp.readFile(path.join(process.cwd(), "db", "db.json"))
-  //   ).toString();
-
-  //   const data = JSON.parse(stringData) as DB;
-
-  //   const user = data.users.find((user) => this.id === user.id);
-
-  //   if (!user || user.notes.find((note) => note.title === noteDto.title))
-  //     throw new Error("Wrong data");
-
-  //   const now = new Date();
-  //   user.notes.push({
-  //     id: noteDto.userId,
-  //     title: noteDto.title,
-  //     body: noteDto.body,
-  //     dateCreated: now.toISOString(),
-  //     favorite: noteDto.favorite,
-  //   });
-
-  //   await fsp.writeFile(
-  //     path.join(process.cwd(), "db", "db.json"),
-  //     JSON.stringify(data)
-  //   );
-
-  //   this.notes.push(
-  //     new Note(
-  //       noteDto.userId,
-  //       noteDto.title,
-  //       noteDto.body,
-  //       now,
-  //       noteDto.favorite,
-  //       this
-  //     )
-  //   );
-  // }
 }
