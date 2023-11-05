@@ -2,7 +2,6 @@ import { promises as fsp } from "fs";
 import path from "path";
 import { v4 } from "uuid";
 import { DB } from "./schemas";
-import { Note, NoteDTO } from "./Note";
 import { BadRequestError } from "../errors/BadRequestError";
 
 export type UserDTO = {
@@ -16,14 +15,12 @@ export type UserResponse = {
 
 export class User {
   private id: string;
-  private notes: Note[];
 
   constructor(
     private username: string,
     private password: string
   ) {
     this.id = v4();
-    this.notes = [];
   }
 
   async save(): Promise<UserResponse> {

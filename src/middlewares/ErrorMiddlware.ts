@@ -1,4 +1,4 @@
-import { NextFunction, Request, Response } from "express";
+import { Request, Response } from "express";
 import { NotAuthenticatedError } from "../errors/NotAuthenticatedError";
 import { v4 } from "uuid";
 import { BadRequestError } from "../errors/BadRequestError";
@@ -9,12 +9,7 @@ type ErrorResult = {
   message: string;
 };
 
-export function errorHandler(
-  error: Error,
-  req: Request,
-  res: Response,
-  next: NextFunction
-) {
+export function errorHandler(error: Error, req: Request, res: Response) {
   console.log(
     `Handling error for a ${req.xhr ? "n async" : "normal"} request to ${
       req.url

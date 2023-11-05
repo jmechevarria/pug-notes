@@ -26,7 +26,7 @@ app.get("/", (req, res) => {
   res.render("index/index", { data: {} });
 });
 
-app.get("/register", (req: Request, res: Response, next: NextFunction) => {
+app.get("/register", (req: Request, res: Response) => {
   console.log("register:get");
   res.render("register/register");
 });
@@ -52,7 +52,7 @@ app.post("/register", (req: Request, res: Response, next: NextFunction) => {
   }
 });
 
-app.get("/login", (req: Request, res: Response, next: NextFunction) => {
+app.get("/login", (req: Request, res: Response) => {
   console.log("GET login");
   res.render("login/login");
 });
@@ -76,7 +76,6 @@ app.post("/login", (req: Request, res: Response, next: NextFunction) => {
       });
   }
 });
-
 
 app.use(errorHandler);
 

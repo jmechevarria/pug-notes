@@ -1,4 +1,4 @@
-import { UserDTO, UserResponse } from "../models/User";
+import { UserDTO } from "../models/User";
 import { AuthService, LoginResponse } from "../services/AuthService";
 
 class AuthController {
