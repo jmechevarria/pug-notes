@@ -19,7 +19,12 @@
     "tsconfigRootDir": "."
   },
   "rules": {
-    "@typescript-eslint/no-unused-vars": "warn",
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      {
+        "argsIgnorePattern": "next"
+      }
+    ],
     "semi": ["warn", "always"],
     "quotes": ["warn", "double"],
     "no-useless-catch": "error",
