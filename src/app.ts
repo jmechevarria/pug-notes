@@ -4,7 +4,7 @@
 import express, { NextFunction, Request, Response } from "express";
 import userController from "./controllers/UserController";
 import authController from "./controllers/AuthController";
-import { errorHandler } from "./middlewares/ErrorMiddlware";
+import { errorHandler } from "./middlewares/ErrorMiddleware";
 import { AuthMiddleware } from "./middlewares/AuthMiddleware";
 import { BadRequestError } from "./errors/BadRequestError";
 

@@ -20,7 +20,7 @@ html.anonymous.loading(lang="en")
         input.favorite(value=false, type="checkbox")
         button Add note
 
-    if data.user && data.user.notes && data.user.notes.length
+    if data && data.user && data.user.notes && data.user.notes.length
       h1 Notes
         ul#notes
           - for (const note of data.user.notes)
@@ -33,7 +33,7 @@ html.anonymous.loading(lang="en")
     else
       span No notes here
 
-    if data.user
+    if data && data.user
       script.
         localStorage.setItem(  
           'user', JSON.stringify(!{JSON.stringify(data.user)})
